@@ -1,4 +1,4 @@
-# GROUP 4 - the flat map transition (step 21)
+﻿# GROUP 4 - the flat map transition (step 21)
 #
 # FLAT_MAP_ZOOM_STEP is 21 and cannot be moved without moving the map table
 # with it, so instead the icon work that vanilla puts on steps 20 and 21 is

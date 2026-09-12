@@ -1,4 +1,4 @@
-# Overrides game/gfx/map/map_object_data/game_object_layers.txt
+﻿# Overrides game/gfx/map/map_object_data/game_object_layers.txt
 #
 # Vanilla drops activities, buildings and units all on zoom step 9, the same
 # step that unloads the three tree layers, the coast foam and the mountain

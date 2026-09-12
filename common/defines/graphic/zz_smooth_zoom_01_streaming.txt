@@ -1,4 +1,4 @@
-# GROUP 1 - streaming budget
+﻿# GROUP 1 - streaming budget
 #
 # The one knob that directly limits how much mesh loading may happen in a
 # single frame. Vanilla lets 100 meshes through, which is what turns "zoom

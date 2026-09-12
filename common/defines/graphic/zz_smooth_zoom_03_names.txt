@@ -1,4 +1,4 @@
-# GROUP 3 - cheaper map name placement
+﻿# GROUP 3 - cheaper map name placement
 #
 # Map names are re-laid-out when the visible title tier changes, which is
 # exactly what happens at a zoom transition - it is the work behind the hitch

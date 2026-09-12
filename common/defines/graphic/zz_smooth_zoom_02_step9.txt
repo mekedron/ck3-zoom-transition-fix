@@ -1,4 +1,4 @@
-# GROUP 2 - break up the zoom step 9 pile-up
+﻿# GROUP 2 - break up the zoom step 9 pile-up
 #
 # Vanilla schedules all of this on step 9: three tree layers, activities,
 # buildings, units, coast foam and mountain env effects unload; fort icons

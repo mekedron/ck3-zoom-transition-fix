@@ -132,6 +132,12 @@ Nothing here touches shaders, so it does not conflict with
 [Faster Trees](https://github.com/mekedron/ck3-lowspec-tree-perf) or the fog
 mod.
 
+## File encoding
+
+Every `.txt` here starts with a UTF-8 BOM, like the vanilla files. Without it
+the game still reads them, but logs one
+`should be in utf8-bom encoding` line per file into `logs/error.log`.
+
 ## Game version
 
 Built against 1.19.0.6 (Scribe). After a game patch, re-diff the two layer
