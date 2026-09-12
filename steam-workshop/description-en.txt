@@ -1,0 +1,72 @@
+[h1]Smooth Zoom Transitions[/h1]
+
+Removes the two frame hitches you get while zooming the map: the one where the terrain fills up with county colours, and the one where the map flattens out and titles group into empires. Nothing is removed from the game — the work is simply spread out instead of landing in a single frame.
+
+[h2]The cause[/h2]
+
+It is not one expensive system. It is that vanilla schedules almost everything on the [b]same zoom step[/b].
+
+[b]Zoom step 9[/b] is where all twelve of these happen at once:
+
+[list]
+[*]the three tree layers unload ([code]tree_low[/code], [code]tree_medium[/code], [code]tree_high[/code])
+[*]the activity, building and unit layers unload — every holding model on the map
+[*]coast foam and mountain environment effects unload
+[*]fort icons hide ([code]FORT_VISIBLE_ZOOM_STEPS = { 0 9 }[/code])
+[*]raid icons switch size ([code]DETAILED_RAID_SIMPLE_TO_DETAILED_ZOOM_STEP = 9[/code])
+[*]map names swap from small to large ([code]LARGE_NAMES_ZOOM_STEP = 9[/code])
+[*]the realm colour overlay starts filling ([code]REALM_COLOR_MAP_START_ZOOM_STEP = 9[/code])
+[/list]
+
+Every one of those mesh instances is torn down in one frame — and rebuilt in one frame the moment you zoom back in, limited only by [code]MAX_MESHES_LOADED_PER_FRAME = 100[/code].
+
+[b]Zoom step 21[/b] is the same story. [code]FLAT_MAP_ZOOM_STEP = 21[/code] is also where the map table layers fade in, where realm capital icons hide, and where [code]DISABLE_PROVINCE_AND_COUNTY_IN_FLAT_MAP = yes[/code] throws the province and county borders away entirely — so zooming back in rebuilds them from scratch.
+
+[h2]The fix[/h2]
+
+[list]
+[*]the per-frame mesh loading budget drops from 100 to 20, so streaming is amortised over several frames instead of spiking in one
+[*]fort icons, raid icons, map names and the start of the colour overlay all move off step 9
+[*]activities, buildings and units unload on steps 10, 11 and 12 instead of all on 9
+[*]coast foam and mountain effects move down to steps 7 and 8
+[*]the icon work vanilla puts on steps 20 and 21 moves off the flat map transition
+[*]the map name placement search samples less densely — that search is exactly what runs when the visible title tier changes
+[*]full border rebuilds run half as often; partial updates are untouched, so borders still follow conquests
+[/list]
+
+The tree layers are deliberately left on step 9. That is where players expect forests to disappear, and moving them changes how the whole map reads while zooming. Everything that used to share the step with them moved instead.
+
+[h2]Trade-offs, stated plainly[/h2]
+
+[list]
+[*]holdings and units stay on screen two to three steps longer — a few hundred extra meshes drawn in that band, which is a steady cost rather than a spike
+[*]large map names appear at step 11 instead of 9, and the crossfade between small and large names is shorter
+[*]the name placement search is coarser, so the occasional name sits slightly differently than in vanilla
+[*]the very first zoom out of a session is still slower than the rest: that is the game compiling shader permutations it has not cached yet, and no mod can prevent it
+[/list]
+
+[h2]Ultrawide extra[/h2]
+
+[code]NAME_DRAW_DISTANCE[/code] is a radius tuned for a 16:9 frustum. On an ultrawide screen far more of the map falls inside it, so the game lays out and draws many more curved map names than it was tuned for — and that layout is exactly what runs at every zoom transition. The mod ships an opt-in file that cuts the radius; see the GitHub readme for how to switch it on.
+
+[h2]Notes[/h2]
+
+[list]
+[*]Graphics-only: no gameplay, script or history files are changed, so ironman and achievements are unaffected
+[*]Safe to add or remove at any time, including mid-campaign — it does not touch save games
+[*]No shaders are touched, so it stacks with shader mods without conflict
+[*]Every change is a separate file, so any single group can be tested on its own by removing one file
+[*]Works with Advanced Shaders both on and off
+[*]Built for CK3 1.19.x
+[/list]
+
+[h2]Compatibility[/h2]
+
+The defines files add keys rather than replacing the vanilla defines file, so they only collide with another mod that changes those same keys. Two map object layer files are full replacements and will conflict with any mod that adds or removes map object layers — load this mod before such a mod, or merge the tables by hand.
+
+[h2]Source[/h2]
+
+The full source is on GitHub, including every vanilla value quoted next to the change and an install script for Linux / Proton users:
+[url=https://github.com/mekedron/ck3-zoom-transition-fix]github.com/mekedron/ck3-zoom-transition-fix[/url]
+
+Issues and pull requests are welcome.

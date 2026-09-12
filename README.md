@@ -4,6 +4,12 @@ Removes the two frame hitches you get while zooming the map: the one where the
 terrain fills up with county colours, and the one where the map flattens and
 the titles group into empires.
 
+<img src="thumbnail.png" alt="Twelve map systems on one zoom step in vanilla, spread over six with this mod" width="360">
+
+## Where to get
+
+Not published yet - build it from this repository, see [Installing](#installing) below.
+
 ## Cause
 
 It is not one expensive system. It is that vanilla schedules almost everything
@@ -23,7 +29,7 @@ there:
 | map names swap small to large (`LARGE_NAMES_ZOOM_STEP = 9`) | `NMapName` |
 | the realm colour overlay starts filling (`REALM_COLOR_MAP_START_ZOOM_STEP = 9`) | `NTerrainCulling` |
 
-Eleven layers and systems torn down or swapped in the same frame, and every
+Twelve layers and systems torn down or swapped in the same frame, and every
 one of those mesh instances gets rebuilt the moment you zoom back in, limited
 only by `MAX_MESHES_LOADED_PER_FRAME = 100`.
 
@@ -96,9 +102,13 @@ which owns that file.
 ## Layout
 
     descriptor.mod                       mod metadata
+    thumbnail.png                        Workshop preview, must sit in the mod root
     common/defines/graphic/zz_*.txt      partial defines overrides
     gfx/map/map_object_data/*.txt        full overrides of two layer files
     install.sh                           copies the mod into the Proton prefix
+    steam-workshop/                      listing texts for Steam and Paradox Mods
+    tools/make_thumbnail.py              regenerates thumbnail.png
+    tools/bbcode_to_plain.py             regenerates the Paradox Mods texts
 
 ## Installing
 

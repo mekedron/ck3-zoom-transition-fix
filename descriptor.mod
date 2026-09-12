@@ -5,4 +5,5 @@ tags={
 	"Utilities"
 }
 name="Smooth Zoom Transitions"
+picture="thumbnail.png"
 supported_version="1.19.*"

@@ -1,0 +1,1 @@
+Vanilla CK3 tears down twelve map systems on a single zoom step, then rebuilds them all in one frame when you zoom back in. This mod spreads that work over neighbouring steps and lowers the per-frame streaming budget. Graphics-only, ironman-safe.
