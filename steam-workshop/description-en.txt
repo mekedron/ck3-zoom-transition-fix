@@ -9,18 +9,18 @@ It is not one expensive system. It is that vanilla schedules almost everything o
 [b]Zoom step 9[/b] is where all twelve of these happen at once:
 
 [list]
-[*]the three tree layers unload ([code]tree_low[/code], [code]tree_medium[/code], [code]tree_high[/code])
+[*]the three tree layers unload (tree_low, tree_medium, tree_high)
 [*]the activity, building and unit layers unload — every holding model on the map
 [*]coast foam and mountain environment effects unload
-[*]fort icons hide ([code]FORT_VISIBLE_ZOOM_STEPS = { 0 9 }[/code])
-[*]raid icons switch size ([code]DETAILED_RAID_SIMPLE_TO_DETAILED_ZOOM_STEP = 9[/code])
-[*]map names swap from small to large ([code]LARGE_NAMES_ZOOM_STEP = 9[/code])
-[*]the realm colour overlay starts filling ([code]REALM_COLOR_MAP_START_ZOOM_STEP = 9[/code])
+[*]fort icons hide (FORT_VISIBLE_ZOOM_STEPS = { 0 9 })
+[*]raid icons switch size (DETAILED_RAID_SIMPLE_TO_DETAILED_ZOOM_STEP = 9)
+[*]map names swap from small to large (LARGE_NAMES_ZOOM_STEP = 9)
+[*]the realm colour overlay starts filling (REALM_COLOR_MAP_START_ZOOM_STEP = 9)
 [/list]
 
-Every one of those mesh instances is torn down in one frame — and rebuilt in one frame the moment you zoom back in, limited only by [code]MAX_MESHES_LOADED_PER_FRAME = 100[/code].
+Every one of those mesh instances is torn down in one frame — and rebuilt in one frame the moment you zoom back in, limited only by MAX_MESHES_LOADED_PER_FRAME = 100.
 
-[b]Zoom step 21[/b] is the same story. [code]FLAT_MAP_ZOOM_STEP = 21[/code] is also where the map table layers fade in, where realm capital icons hide, and where [code]DISABLE_PROVINCE_AND_COUNTY_IN_FLAT_MAP = yes[/code] throws the province and county borders away entirely — so zooming back in rebuilds them from scratch.
+[b]Zoom step 21[/b] is the same story. FLAT_MAP_ZOOM_STEP = 21 is also where the map table layers fade in, where realm capital icons hide, and where DISABLE_PROVINCE_AND_COUNTY_IN_FLAT_MAP = yes throws the province and county borders away entirely — so zooming back in rebuilds them from scratch.
 
 [h2]The fix[/h2]
 
@@ -47,7 +47,7 @@ The tree layers are deliberately left on step 9. That is where players expect fo
 
 [h2]Ultrawide extra[/h2]
 
-[code]NAME_DRAW_DISTANCE[/code] is a radius tuned for a 16:9 frustum. On an ultrawide screen far more of the map falls inside it, so the game lays out and draws many more curved map names than it was tuned for — and that layout is exactly what runs at every zoom transition. The mod ships an opt-in file that cuts the radius; see the GitHub readme for how to switch it on.
+NAME_DRAW_DISTANCE is a radius tuned for a 16:9 frustum. On an ultrawide screen far more of the map falls inside it, so the game lays out and draws many more curved map names than it was tuned for — and that layout is exactly what runs at every zoom transition. The mod ships an opt-in file that cuts the radius; see the GitHub readme for how to switch it on.
 
 [h2]Notes[/h2]
 

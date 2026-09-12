@@ -7,6 +7,13 @@
     short-description-en.txt         one-paragraph summary
     short-description-ru.txt         one-paragraph summary
 
+**Do not use `[code]` in the Steam files.** Steam has no inline code tag - it
+renders `[code]` as a full-width block, so an identifier written mid-sentence
+breaks the line, becomes its own boxed paragraph, and leaves the rest of the
+sentence stranded around it. Identifiers are written as plain text instead;
+`FORT_VISIBLE_ZOOM_STEPS` stands out well enough on its own. `[b]`, `[i]` and
+`[list]` are fine.
+
 The Paradox Mods files are **generated** from the Steam ones by
 `tools/bbcode_to_plain.py`; edit the BBCode version and re-run it rather than
 editing them directly, or the two will drift apart.
