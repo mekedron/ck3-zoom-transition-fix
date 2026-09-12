@@ -1,0 +1,21 @@
+# GROUP 4 - the flat map transition (step 21)
+#
+# FLAT_MAP_ZOOM_STEP is 21 and cannot be moved without moving the map table
+# with it, so instead the icon work that vanilla puts on steps 20 and 21 is
+# pushed off that step.
+#
+# BORDERS_FULL_UPDATE_INTERVAL is raised because crossing into the flat map
+# throws the province and county borders away entirely
+# (NBorder.DISABLE_PROVINCE_AND_COUNTY_IN_FLAT_MAP = yes) and zooming back in
+# rebuilds them. Borders still get their partial updates; only the full
+# rebuild runs half as often.
+
+NMapIcon = {
+	REALM_CAPITAL_VISIBLE_ZOOM_STEPS = { 0 19 }						# vanilla { 0 21 }
+	ACTIVITY_VISIBLE_ZOOM_STEPS = { 0 18 }							# vanilla { 0 20 }
+	CONTRACT_AND_DOMICILE_FLAT_MAP_VISIBLE_ZOOM_STEPS = { 23 -1 }	# vanilla { 20 -1 }
+}
+
+NBorder = {
+	BORDERS_FULL_UPDATE_INTERVAL = 40		# vanilla 20
+}

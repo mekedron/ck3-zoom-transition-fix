@@ -1,0 +1,43 @@
+# Overrides game/gfx/map/map_object_data/game_object_layers.txt
+#
+# Vanilla drops activities, buildings and units all on zoom step 9, the same
+# step that unloads the three tree layers, the coast foam and the mountain
+# env effects, hides the fort icons, swaps the map names and starts the realm
+# colour overlay. Everything is torn down in one frame.
+#
+# Here the three game object layers move off that step, heaviest last:
+#
+#   layer             vanilla  here
+#   activities_layer        9    10
+#   building_layer          9    11
+#   unit_layer              9    12
+#
+# Trade-off: holdings and units stay on screen two to three steps longer, so
+# the 9..12 band draws a few hundred more meshes than vanilla. That is a steady
+# cost, not a spike. If you would rather have them gone early, use 8 / 7 / 9 -
+# the pile-up is still broken up, just downwards.
+
+layer={
+	name="activities_layer"
+	fade_in=0
+	fade_out=10
+	category=""
+	masks=""
+	visibility_tags=""
+}
+layer={
+	name="building_layer"
+	fade_in=0
+	fade_out=11
+	category=""
+	masks=""
+	visibility_tags=""
+}
+layer={
+	name="unit_layer"
+	fade_in=0
+	fade_out=12
+	category=""
+	masks=""
+	visibility_tags=""
+}

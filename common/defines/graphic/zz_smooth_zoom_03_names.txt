@@ -1,0 +1,11 @@
+# GROUP 3 - cheaper map name placement
+#
+# Map names are re-laid-out when the visible title tier changes, which is
+# exactly what happens at a zoom transition - it is the work behind the hitch
+# when counties group into duchies and duchies into empires. The placement
+# search is tunable and vanilla's own comments say which direction is faster.
+
+NJominiMapGraphics = {
+	COUNTRY_NAMES_NUM_LINE_TESTS = 3		# vanilla 5 - "less is faster"
+	COUNTRY_NAMES_STRIDE_SIZE = 6			# vanilla 4 - "more is faster"
+}

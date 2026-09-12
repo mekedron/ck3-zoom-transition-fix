@@ -1,0 +1,38 @@
+# Overrides game/gfx/map/map_object_data/effect_layers.txt
+#
+# Moves the two effect layers that vanilla unloads on zoom step 9 down to
+# steps 7 and 8, away from the tree layers.
+#
+#   layer                        vanilla  here
+#   coast_foam_layer                   9     7
+#   env_effect_layer                   8     8
+#   env_effect_mountains_layer         9     8
+#
+# Both are decoration only; losing them one or two steps earlier is hard to
+# notice from that height, and it takes two emitter-heavy layers out of the
+# frame where the forests go away.
+
+layer={
+	name="coast_foam_layer"
+	fade_in=0
+	fade_out=7
+	category=""
+	masks="medium|high"
+	visibility_tags=""
+}
+layer={
+	name="env_effect_layer"
+	fade_in=0
+	fade_out=8
+	category=""
+	masks="high"
+	visibility_tags="realms"
+}
+layer={
+	name="env_effect_mountains_layer"
+	fade_in=0
+	fade_out=8
+	category=""
+	masks="high"
+	visibility_tags="realms"
+}

@@ -1,0 +1,14 @@
+# GROUP 5 - ultrawide name draw distance (opt-in)
+#
+# Rename to zz_smooth_zoom_05_ultrawide.txt to enable.
+#
+# NAME_DRAW_DISTANCE is a radius, tuned for a 16:9 frustum. On 5120x1440 a
+# much wider slice of the map falls inside it, so the game lays out and draws
+# far more curved map names than it was tuned for - and that layout is what
+# runs at every zoom transition. Cutting the radius makes every transition
+# cheaper; the cost is that the most distant names near the left and right
+# screen edges stop being drawn.
+
+NMapName = {
+	NAME_DRAW_DISTANCE = 9000.0				# vanilla 12000.0
+}

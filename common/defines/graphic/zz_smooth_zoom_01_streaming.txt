@@ -1,0 +1,11 @@
+# GROUP 1 - streaming budget
+#
+# The one knob that directly limits how much mesh loading may happen in a
+# single frame. Vanilla lets 100 meshes through, which is what turns "zoom
+# back in past step 9" into one long frame while every holding, tree and unit
+# is rebuilt at once. A smaller budget spreads the same work over more frames:
+# objects pop in a little more gradually, the frame time stays flat.
+
+NGraphics = {
+	MAX_MESHES_LOADED_PER_FRAME = 20		# vanilla 100
+}

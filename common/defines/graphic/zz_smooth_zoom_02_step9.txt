@@ -1,0 +1,25 @@
+# GROUP 2 - break up the zoom step 9 pile-up
+#
+# Vanilla schedules all of this on step 9: three tree layers, activities,
+# buildings, units, coast foam and mountain env effects unload; fort icons
+# hide; map names swap from small to large; the realm colour overlay starts
+# filling; the raid icons change size.
+#
+# The layer unloads are moved in this mod's gfx/map/map_object_data files.
+# These are the rest.
+
+NMapName = {
+	LARGE_NAMES_ZOOM_STEP = 11				# vanilla 9
+	CROSSFADE_DELAY = 0.4					# vanilla 0.7 - how long both the
+											# small and the large names are
+											# drawn at the same time
+}
+
+NTerrainCulling = {
+	REALM_COLOR_MAP_START_ZOOM_STEP = 10	# vanilla 9
+}
+
+NMapIcon = {
+	FORT_VISIBLE_ZOOM_STEPS = { 0 10 }					# vanilla { 0 9 }
+	DETAILED_RAID_SIMPLE_TO_DETAILED_ZOOM_STEP = 10		# vanilla 9
+}
