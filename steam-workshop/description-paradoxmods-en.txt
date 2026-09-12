@@ -22,10 +22,10 @@ Zoom step 21 is the same story. FLAT_MAP_ZOOM_STEP = 21 is also where the map ta
 
 THE FIX
 
-- the per-frame mesh loading budget drops from 100 to 20, so streaming is amortised over several frames instead of spiking in one
+- the per-frame mesh loading budget drops from 100 to 50, so streaming is amortised over several frames instead of spiking in one
 - fort icons, raid icons, map names and the start of the colour overlay all move off step 9
-- activities, buildings and units unload on steps 10, 11 and 12 instead of all on 9
-- coast foam and mountain effects move down to steps 7 and 8
+- activities, buildings and units unload on steps 7, 8 and 10 instead of all on 9
+- coast foam and mountain effects move down to steps 6 and 7
 - the icon work vanilla puts on steps 20 and 21 moves off the flat map transition
 - the map name placement search samples less densely — that search is exactly what runs when the visible title tier changes
 - full border rebuilds run half as often; partial updates are untouched, so borders still follow conquests
@@ -34,7 +34,7 @@ The tree layers are deliberately left on step 9. That is where players expect fo
 
 TRADE-OFFS, STATED PLAINLY
 
-- holdings and units stay on screen two to three steps longer — a few hundred extra meshes drawn in that band, which is a steady cost rather than a spike
+- holdings, activities, coast foam and mountain effects disappear one or two steps earlier than you may be used to; only army models are kept a step longer
 - large map names appear at step 11 instead of 9, and the crossfade between small and large names is shorter
 - the name placement search is coarser, so the occasional name sits slightly differently than in vanilla
 - the very first zoom out of a session is still slower than the rest: that is the game compiling shader permutations it has not cached yet, and no mod can prevent it

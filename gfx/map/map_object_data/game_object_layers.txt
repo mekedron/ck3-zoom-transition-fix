@@ -5,22 +5,25 @@
 # env effects, hides the fort icons, swaps the map names and starts the realm
 # colour overlay. Everything is torn down in one frame.
 #
-# Here the three game object layers move off that step, heaviest last:
+# These three move off that step. They move *down*, not up:
 #
 #   layer             vanilla  here
-#   activities_layer        9    10
-#   building_layer          9    11
-#   unit_layer              9    12
+#   activities_layer        9     7
+#   building_layer          9     8
+#   unit_layer              9    10
 #
-# Trade-off: holdings and units stay on screen two to three steps longer, so
-# the 9..12 band draws a few hundred more meshes than vanilla. That is a steady
-# cost, not a spike. If you would rather have them gone early, use 8 / 7 / 9 -
-# the pile-up is still broken up, just downwards.
+# The direction matters. A layer pushed to a higher step stays visible over a
+# wider zoom range, and the visible map area grows fast as you pull back - so
+# raising building_layer means drawing every holding model on a much larger
+# slice of the map than vanilla ever did. An earlier version of this mod used
+# 10 / 11 / 12 and cost frame rate exactly while zooming in towards county and
+# duchy level. Unloading earlier is free; only unit_layer is raised, because
+# armies are worth seeing a step longer and there are few of them.
 
 layer={
 	name="activities_layer"
 	fade_in=0
-	fade_out=10
+	fade_out=7
 	category=""
 	masks=""
 	visibility_tags=""
@@ -28,7 +31,7 @@ layer={
 layer={
 	name="building_layer"
 	fade_in=0
-	fade_out=11
+	fade_out=8
 	category=""
 	masks=""
 	visibility_tags=""
@@ -36,7 +39,7 @@ layer={
 layer={
 	name="unit_layer"
 	fade_in=0
-	fade_out=12
+	fade_out=10
 	category=""
 	masks=""
 	visibility_tags=""

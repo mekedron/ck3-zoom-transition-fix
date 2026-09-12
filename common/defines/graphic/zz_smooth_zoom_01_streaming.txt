@@ -5,7 +5,13 @@
 # back in past step 9" into one long frame while every holding, tree and unit
 # is rebuilt at once. A smaller budget spreads the same work over more frames:
 # objects pop in a little more gradually, the frame time stays flat.
+#
+# Do not set this too low. If the budget cannot drain the queue while the
+# camera is still moving, the loading never catches up and you trade one long
+# frame for a long stretch of slightly bad ones, which feels worse. 20 was the
+# first value tried here and was too aggressive; 50 keeps the spike halved
+# without starving the queue. The ladder is 100 (vanilla) / 50 / 20.
 
 NGraphics = {
-	MAX_MESHES_LOADED_PER_FRAME = 20		# vanilla 100
+	MAX_MESHES_LOADED_PER_FRAME = 50		# vanilla 100
 }

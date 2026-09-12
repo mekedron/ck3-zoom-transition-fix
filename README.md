@@ -45,7 +45,7 @@ Nothing is removed. The work is spread over neighbouring zoom steps and the
 per-frame loading budget is lowered so that what remains is amortised.
 
     common/defines/graphic/
-      zz_smooth_zoom_01_streaming.txt   MAX_MESHES_LOADED_PER_FRAME 100 -> 20
+      zz_smooth_zoom_01_streaming.txt   MAX_MESHES_LOADED_PER_FRAME 100 -> 50
       zz_smooth_zoom_02_step9.txt       fort/raid icons, map names and the
                                         colour overlay move off step 9
       zz_smooth_zoom_03_names.txt       cheaper map name placement search
@@ -54,8 +54,8 @@ per-frame loading budget is lowered so that what remains is amortised.
       zz_smooth_zoom_05_ultrawide.txt.off   opt-in, see below
 
     gfx/map/map_object_data/
-      game_object_layers.txt  activities 10, buildings 11, units 12
-      effect_layers.txt       coast foam 7, mountain effects 8
+      game_object_layers.txt  activities 7, buildings 8, units 10
+      effect_layers.txt       coast foam 6, mountain effects 7
 
 The tree layers in `layers.txt` are deliberately left alone on step 9. That is
 where players expect forests to disappear, and moving them changes how the
@@ -69,10 +69,16 @@ the comments, so they are easy to re-tune by hand.
 
 ### Trade-offs, stated plainly
 
-* Holdings and units stay on screen two to three steps longer than vanilla.
-  That is a few hundred extra meshes drawn in the 9..12 band - a steady cost,
-  not a spike. The comment in `game_object_layers.txt` gives the numbers to
-  use if you would rather they unloaded *earlier* instead.
+* Holdings, activities, coast foam and mountain effects unload one or two
+  steps *earlier* than vanilla, so they disappear slightly sooner than you may
+  be used to. Only `unit_layer` is raised, by one step.
+
+  An earlier version of this mod moved these the other way - 10 / 11 / 12 -
+  and that was a mistake worth naming: the visible map area grows quickly as
+  the camera pulls back, so keeping the holding models alive up to step 11
+  meant drawing them across a far bigger slice of the map than vanilla ever
+  did, and it cost frame rate exactly while zooming in towards county and
+  duchy level. Layers may move down cheaply; moving them up is never free.
 * Large map names appear at step 11 instead of 9, and the crossfade between
   small and large names is shorter (0.4 s instead of 0.7 s).
 * The map name placement search samples less densely, so occasional names sit
