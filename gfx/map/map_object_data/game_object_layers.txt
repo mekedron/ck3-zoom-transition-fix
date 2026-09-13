@@ -9,18 +9,16 @@
 #
 #   layer             vanilla  here   camera height
 #   activities_layer        9     7   295
-#   building_layer          9    10   453
+#   building_layer          9    11   513
 #   unit_layer              9    10   453
 #
-# Holdings go on step 10, where the realm colour overlay starts filling (this
-# mod moves the start there from 9), so the castles and towns leave as the
-# colours come rather than two steps before them. The overlay is faint for
-# its first two steps and clearly visible from 12, but a layer pushed higher
-# stays visible over a wider zoom range, and the visible map area grows fast
-# as you pull back: an earlier version of this mod kept buildings to step 11
-# and it cost frame rate exactly while zooming in towards county and duchy
-# level. 10 is the compromise; 12 is what the AGOT patch uses, on a map with
-# fewer holdings. Change the number below if you want to try it.
+# Holdings go on step 11: the realm colour overlay starts filling on 10 (this
+# mod moves the start there from 9) but is barely there for a step, and 11
+# is where the colours visibly arrive, so the castles and towns leave with
+# them instead of two steps earlier. A layer pushed higher stays visible over
+# a wider zoom range and the visible map area grows fast as you pull back, so
+# this is as far as it goes; the AGOT patch uses 12 on a map with fewer
+# holdings. Change the number below if you want to try another step.
 
 layer={
 	name="activities_layer"
@@ -33,7 +31,7 @@ layer={
 layer={
 	name="building_layer"
 	fade_in=0
-	fade_out=10
+	fade_out=11
 	category=""
 	masks=""
 	visibility_tags=""
