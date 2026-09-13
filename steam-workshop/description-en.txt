@@ -1,5 +1,7 @@
 [h1]Smooth Zoom Transitions[/h1]
 
+[b]Guide:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441]CK3 on a potato PC: a locked 60 FPS, and the map still looks sharp[/url] — the settings and mods this belongs to.
+
 Removes the two frame hitches you get while zooming the map: the one where the terrain fills up with county colours, and the one where the map flattens out and titles group into empires. Nothing is removed from the game — the work is simply spread out instead of landing in a single frame.
 
 [h2]The cause[/h2]

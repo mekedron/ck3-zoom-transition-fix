@@ -1,5 +1,7 @@
 Smooth Zoom Transitions
 
+Guide: https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441 — the settings and mods this belongs to.
+
 Removes the two frame hitches you get while zooming the map: the one where the terrain fills up with county colours, and the one where the map flattens out and titles group into empires. Nothing is removed from the game — the work is simply spread out instead of landing in a single frame.
 
 THE CAUSE
