@@ -11,6 +11,7 @@
 #   activities_layer        9     7   295
 #   building_layer          9     9   396
 #   unit_layer              9    10   453
+#   animal_layer            -     9   396   (new: the herds from animals.txt)
 #
 # Holdings stay on step 9 because that is the click on which the realm colour
 # overlay arrives (observed in the political map mode; the define says 10 but
@@ -20,6 +21,10 @@
 # map for nothing. They share step 9 with the tree layers, as in vanilla; the
 # activities, units, foam, mountain effects, icons and names still leave it.
 # The AGOT patch uses 12 on a map with fewer holdings.
+#
+# animal_layer is new: vanilla keeps the elephant, horse and sheep herds on
+# unit_layer, which this mod holds to step 10 for the armies' sake; the herds
+# get their own layer (see animals.txt) and go on 9 with the holdings.
 
 layer={
 	name="activities_layer"
@@ -41,6 +46,14 @@ layer={
 	name="unit_layer"
 	fade_in=0
 	fade_out=10
+	category=""
+	masks=""
+	visibility_tags=""
+}
+layer={
+	name="animal_layer"
+	fade_in=0
+	fade_out=9
 	category=""
 	masks=""
 	visibility_tags=""

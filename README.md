@@ -54,7 +54,9 @@ per-frame loading budget is lowered so that what remains is amortised.
       zz_smooth_zoom_05_ultrawide.txt.off   opt-in, see below
 
     gfx/map/map_object_data/
-      game_object_layers.txt  activities 7, buildings 9 (vanilla), units 10
+      game_object_layers.txt  activities 7, buildings 9 (vanilla), units 10,
+                              plus a new animal_layer on 9
+      animals.txt             vanilla's herds moved from unit_layer to animal_layer
       effect_layers.txt       coast foam 6, mountain effects 7
 
 The tree layers in `layers.txt` are deliberately left alone on step 9. That is
@@ -71,7 +73,9 @@ the comments, so they are easy to re-tune by hand.
 
 * Activities, coast foam and mountain effects unload one or two steps
   *earlier* than vanilla, so they disappear slightly sooner than you may be
-  used to. `unit_layer` is raised by one step, to 10. `building_layer` stays
+  used to. `unit_layer` is raised by one step, to 10, for the armies; the
+  roaming herds vanilla keeps on that layer move to a layer of their own and
+  go on 9 with the holdings. `building_layer` stays
   on vanilla's 9: that is the click on which the realm colours arrive, and a
   painted map has no use for the holding models. 1.0.0 had them on step 8, a
   click before any colour; 10 and 11 were tried and kept them one or two
@@ -114,7 +118,7 @@ which owns that file.
     descriptor.mod                       mod metadata
     thumbnail.png                        Workshop preview, must sit in the mod root
     common/defines/graphic/zz_*.txt      partial defines overrides
-    gfx/map/map_object_data/*.txt        full overrides of two layer files
+    gfx/map/map_object_data/*.txt        full overrides of two layer files and animals.txt
     install.sh                           copies the mod into the Proton prefix
     steam-workshop/                      listing texts for Steam and Paradox Mods
     tools/make_thumbnail.py              regenerates thumbnail.png
