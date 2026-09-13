@@ -5,20 +5,22 @@
 # env effects, hides the fort icons, swaps the map names and starts the realm
 # colour overlay. Everything is torn down in one frame.
 #
-# These three move off that step. They move *down*, not up:
+# These three move off that step:
 #
-#   layer             vanilla  here
-#   activities_layer        9     7
-#   building_layer          9     8
-#   unit_layer              9    10
+#   layer             vanilla  here   camera height
+#   activities_layer        9     7   295
+#   building_layer          9    10   453
+#   unit_layer              9    10   453
 #
-# The direction matters. A layer pushed to a higher step stays visible over a
-# wider zoom range, and the visible map area grows fast as you pull back - so
-# raising building_layer means drawing every holding model on a much larger
-# slice of the map than vanilla ever did. An earlier version of this mod used
-# 10 / 11 / 12 and cost frame rate exactly while zooming in towards county and
-# duchy level. Unloading earlier is free; only unit_layer is raised, because
-# armies are worth seeing a step longer and there are few of them.
+# Holdings go on step 10, where the realm colour overlay starts filling (this
+# mod moves the start there from 9), so the castles and towns leave as the
+# colours come rather than two steps before them. The overlay is faint for
+# its first two steps and clearly visible from 12, but a layer pushed higher
+# stays visible over a wider zoom range, and the visible map area grows fast
+# as you pull back: an earlier version of this mod kept buildings to step 11
+# and it cost frame rate exactly while zooming in towards county and duchy
+# level. 10 is the compromise; 12 is what the AGOT patch uses, on a map with
+# fewer holdings. Change the number below if you want to try it.
 
 layer={
 	name="activities_layer"
@@ -31,7 +33,7 @@ layer={
 layer={
 	name="building_layer"
 	fade_in=0
-	fade_out=8
+	fade_out=10
 	category=""
 	masks=""
 	visibility_tags=""
