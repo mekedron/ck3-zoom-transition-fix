@@ -5,20 +5,21 @@
 # env effects, hides the fort icons, swaps the map names and starts the realm
 # colour overlay. Everything is torn down in one frame.
 #
-# These three move off that step:
+# Two of the three move off that step; the holdings stay on vanilla's 9:
 #
 #   layer             vanilla  here   camera height
 #   activities_layer        9     7   295
-#   building_layer          9    10   453
+#   building_layer          9     9   396
 #   unit_layer              9    10   453
 #
-# Holdings go on step 10, where the realm colour overlay starts filling (this
-# mod moves the start there from 9): the first colour shows, and one more
-# click out takes the castles and towns away. 11 was tried and felt one click
-# too late; 8 (1.0.0) was two clicks too early. A layer pushed higher stays
-# visible over a wider zoom range and the visible map area grows fast as you
-# pull back, so 10 is also where the frame cost is still fine. The AGOT patch
-# uses 12 on a map with fewer holdings.
+# Holdings stay on step 9 because that is the click on which the realm colour
+# overlay arrives (observed in the political map mode; the define says 10 but
+# the fill is already there on 9), and once the map is painted the castle and
+# town models have nothing left to say. 8 (1.0.0) took them away a click
+# before any colour; 10 and 11 kept them one or two clicks into the painted
+# map for nothing. They share step 9 with the tree layers, as in vanilla; the
+# activities, units, foam, mountain effects, icons and names still leave it.
+# The AGOT patch uses 12 on a map with fewer holdings.
 
 layer={
 	name="activities_layer"
@@ -31,7 +32,7 @@ layer={
 layer={
 	name="building_layer"
 	fade_in=0
-	fade_out=10
+	fade_out=9
 	category=""
 	masks=""
 	visibility_tags=""

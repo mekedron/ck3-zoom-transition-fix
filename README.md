@@ -54,7 +54,7 @@ per-frame loading budget is lowered so that what remains is amortised.
       zz_smooth_zoom_05_ultrawide.txt.off   opt-in, see below
 
     gfx/map/map_object_data/
-      game_object_layers.txt  activities 7, buildings 10, units 10
+      game_object_layers.txt  activities 7, buildings 9 (vanilla), units 10
       effect_layers.txt       coast foam 6, mountain effects 7
 
 The tree layers in `layers.txt` are deliberately left alone on step 9. That is
@@ -71,10 +71,11 @@ the comments, so they are easy to re-tune by hand.
 
 * Activities, coast foam and mountain effects unload one or two steps
   *earlier* than vanilla, so they disappear slightly sooner than you may be
-  used to. `unit_layer` and `building_layer` are raised by one step, to 10,
-  where the colour overlay starts: the first colour shows, one more click out
-  and the holdings are gone. 1.0.0 had them on step 8, two clicks before any
-  colour showed; 11 was tried and was one click too late.
+  used to. `unit_layer` is raised by one step, to 10. `building_layer` stays
+  on vanilla's 9: that is the click on which the realm colours arrive, and a
+  painted map has no use for the holding models. 1.0.0 had them on step 8, a
+  click before any colour; 10 and 11 were tried and kept them one or two
+  clicks into the painted map.
 
   An earlier version of this mod moved these the other way - 10 / 11 / 12 -
   and that was a mistake worth naming: the visible map area grows quickly as

@@ -29,7 +29,7 @@ Every one of those mesh instances is torn down in one frame — and rebuilt in o
 [list]
 [*]the per-frame mesh loading budget drops from 100 to 50, so streaming is amortised over several frames instead of spiking in one
 [*]fort icons, raid icons, map names and the start of the colour overlay all move off step 9
-[*]activities unload on step 7, units and the holding models on 10, where the colour overlay starts, instead of all three on 9: the first colour shows, one more click out and the holdings are gone (1.0.0 had them leave on 8, two clicks before any colour showed)
+[*]activities unload on step 7 and units on 10 instead of 9; the holding models keep vanilla's step 9, because that is the click on which the realm colours arrive and a painted map has no use for them (1.0.0 took them away on 8, a click before any colour)
 [*]coast foam and mountain effects move down to steps 6 and 7
 [*]the icon work vanilla puts on steps 20 and 21 moves off the flat map transition
 [*]the map name placement search samples less densely — that search is exactly what runs when the visible title tier changes
@@ -41,7 +41,7 @@ The tree layers are deliberately left on step 9. That is where players expect fo
 [h2]Trade-offs, stated plainly[/h2]
 
 [list]
-[*]activities, coast foam and mountain effects disappear one or two steps earlier than you may be used to; holdings and army models are kept one step longer
+[*]activities, coast foam and mountain effects disappear one or two steps earlier than you may be used to; army models are kept one step longer; holdings unload where vanilla unloads them
 [*]large map names appear at step 11 instead of 9, and the crossfade between small and large names is shorter
 [*]the name placement search is coarser, so the occasional name sits slightly differently than in vanilla
 [*]the very first zoom out of a session is still slower than the rest: that is the game compiling shader permutations it has not cached yet, and no mod can prevent it
