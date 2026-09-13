@@ -56,6 +56,8 @@ COMPATIBILITY
 
 The defines files add keys rather than replacing the vanilla defines file, so they only collide with another mod that changes those same keys. Two map object layer files are full replacements and will conflict with any mod that adds or removes map object layers — load this mod before such a mod, or merge the tables by hand.
 
+Not tested with A Game of Thrones: AGOT ships its own zoom steps and its own map object layers, and the values here are tuned for vanilla's.
+
 SOURCE
 
 The full source is on GitHub, including every vanilla value quoted next to the change and an install script for Linux / Proton users:
