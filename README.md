@@ -148,6 +148,18 @@ Nothing here touches shaders, so it does not conflict with
 [Faster Trees](https://github.com/mekedron/ck3-lowspec-tree-perf) or the fog
 mod.
 
+### A Game of Thrones
+
+AGOT ships its own `ZOOM_STEPS` (step 8 is 250 units up against vanilla's 344) and its
+own `game_object_layers.txt`, with seven layers instead of three and the holding models
+kept until step 16. This mod's copy of that file, loaded below AGOT, unloads the
+holdings on step 8 - before AGOT's colour overlay starts - and leaves AGOT's special
+buildings, roads and animals on layers it does not declare. Use
+[AGOT Patch for Smooth Zoom Transitions](https://github.com/mekedron/ck3-agot-zoom-patch)
+below AGOT: it is AGOT's table with the same step 9 clean-up applied to AGOT's numbers,
+plus AGOT's map name step (12) restored. This mod stays enabled; its defines apply to
+AGOT unchanged.
+
 ## File encoding
 
 Every `.txt` here starts with a UTF-8 BOM, like the vanilla files. Without it

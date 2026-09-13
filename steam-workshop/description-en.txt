@@ -64,7 +64,8 @@ NAME_DRAW_DISTANCE is a radius tuned for a 16:9 frustum. On an ultrawide screen 
 
 The defines files add keys rather than replacing the vanilla defines file, so they only collide with another mod that changes those same keys. Two map object layer files are full replacements and will conflict with any mod that adds or removes map object layers — load this mod before such a mod, or merge the tables by hand.
 
-Not tested with [b]A Game of Thrones[/b]: AGOT ships its own zoom steps and its own map object layers, and the values here are tuned for vanilla's.
+On [b]A Game of Thrones[/b] this mod needs its patch. AGOT ships its own zoom steps and its own map object layer table, where the holding models stay until step 16 and four AGOT-only layers (special buildings, roads, animals) exist; the table here, loaded below AGOT, unloads the holdings on step 8 - before AGOT's colour overlay even starts - and leaves those four layers undeclared. AGOT Patch for Smooth Zoom Transitions is AGOT's table with the same idea applied to AGOT's numbers; load it below AGOT:
+[url=STEAM_LINK_AGOT_ZOOM]AGOT Patch for Smooth Zoom Transitions[/url]
 
 [h2]Source[/h2]
 
