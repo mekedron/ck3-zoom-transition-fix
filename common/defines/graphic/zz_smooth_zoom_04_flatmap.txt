@@ -14,6 +14,7 @@ NMapIcon = {
 	REALM_CAPITAL_VISIBLE_ZOOM_STEPS = { 0 19 }						# vanilla { 0 21 }
 	ACTIVITY_VISIBLE_ZOOM_STEPS = { 0 18 }							# vanilla { 0 20 }
 	CONTRACT_AND_DOMICILE_FLAT_MAP_VISIBLE_ZOOM_STEPS = { 23 -1 }	# vanilla { 20 -1 }
+	CLERICAL_REGION_CONVERSION_PROGRESS_VISIBLE_ZOOM_STEPS = { 0 19 }	# vanilla { 0 21 }
 }
 
 NBorder = {

@@ -34,8 +34,10 @@ one of those mesh instances gets rebuilt the moment you zoom back in, limited
 only by `MAX_MESHES_LOADED_PER_FRAME = 100`.
 
 **Zoom step 21.** `FLAT_MAP_ZOOM_STEP = 21` is also where the map table layers
-fade in (`map_table_layer_*`, `fade_in = 21`), where realm capital icons hide
-(`REALM_CAPITAL_VISIBLE_ZOOM_STEPS = { 0 21 }`) and where
+fade in (`map_table_layer_*`, `fade_in = 21`), where realm capital icons and
+clerical region conversion progress icons hide
+(`REALM_CAPITAL_VISIBLE_ZOOM_STEPS`, `CLERICAL_REGION_CONVERSION_PROGRESS_VISIBLE_ZOOM_STEPS`,
+both `{ 0 21 }`) and where
 `DISABLE_PROVINCE_AND_COUNTY_IN_FLAT_MAP = yes` throws the province and county
 borders away - which means zooming back in rebuilds them.
 
@@ -176,6 +178,6 @@ the game still reads them, but logs one
 
 ## Game version
 
-Built against 1.19.0.6 (Scribe). After a game patch, re-diff the two layer
+Built against 1.20.0.2 (Crozier). After a game patch, re-diff the two layer
 files against `<steam>/Crusader Kings III/game/gfx/map/map_object_data/` and
 check the vanilla values quoted in the defines comments.

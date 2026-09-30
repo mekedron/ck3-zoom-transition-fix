@@ -1,4 +1,4 @@
-version="1.0.1"
+version="1.1.0"
 tags={
 	"Fixes"
 	"Graphics"
@@ -6,4 +6,5 @@ tags={
 }
 name="Smooth Zoom Transitions"
 picture="thumbnail.png"
-supported_version="1.19.*"
+supported_version="1.20.*"
+remote_file_id="3800395737"

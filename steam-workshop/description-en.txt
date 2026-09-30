@@ -59,7 +59,7 @@ NAME_DRAW_DISTANCE is a radius tuned for a 16:9 frustum. On an ultrawide screen 
 [*]No shaders are touched, so it stacks with shader mods without conflict
 [*]Every change is a separate file, so any single group can be tested on its own by removing one file
 [*]Works with Advanced Shaders both on and off
-[*]Built for CK3 1.19.x
+[*]Built for CK3 1.20.x
 [/list]
 
 [h2]Compatibility[/h2]
