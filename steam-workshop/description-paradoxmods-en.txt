@@ -2,7 +2,7 @@ Smooth Zoom Transitions
 
 Guide: https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441 — the settings and mods this belongs to.
 
-All four in one: Sharp Terrain, Real Snow, Better Water and Smooth Zoom Transitions also come as a single mod, https://steamcommunity.com/sharedfiles/filedetails/?id=ALL_IN_ONE_ID — optional, for the vanilla map; use it instead of the separate mods, not alongside them.
+All four in one: Sharp Terrain, Real Snow, Better Water and Smooth Zoom Transitions also come as a single mod, https://steamcommunity.com/sharedfiles/filedetails/?id=3815911404 — optional, for the vanilla map; use it instead of the separate mods, not alongside them.
 
 Removes the two frame hitches you get while zooming the map: the one where the terrain fills up with county colours, and the one where the map flattens out and titles group into empires. Nothing is removed from the game — the work is simply spread out instead of landing in a single frame.
 

@@ -2,7 +2,7 @@ Smooth Zoom Transitions
 
 Гайд: https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441 — настройки и моды, к которым это относится.
 
-Все четыре в одном: Sharp Terrain, Real Snow, Better Water и Smooth Zoom Transitions есть и одним модом — https://steamcommunity.com/sharedfiles/filedetails/?id=ALL_IN_ONE_ID. Необязательно, для ванильной карты; вместо отдельных модов, а не вместе с ними.
+Все четыре в одном: Sharp Terrain, Real Snow, Better Water и Smooth Zoom Transitions есть и одним модом — https://steamcommunity.com/sharedfiles/filedetails/?id=3815911404. Необязательно, для ванильной карты; вместо отдельных модов, а не вместе с ними.
 
 Убирает два рывка при изменении масштаба: тот, где земля заливается цветами графств, и тот, где карта становится плоской, а титулы группируются в империи. Из игры ничего не вырезано — работа распределена по соседним шагам, а не свалена в один кадр.
 
