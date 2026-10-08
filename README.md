@@ -6,9 +6,15 @@ the titles group into empires.
 
 <img src="thumbnail.png" alt="Twelve map systems on one zoom step in vanilla, spread over six with this mod" width="360">
 
+**All four in one:** Sharp Terrain, Real Snow, Better Water and Smooth Zoom Transitions
+also come as one mod, [All-in-One Map Pack Without Advanced Shaders](https://github.com/mekedron/ck3-lowspec-all-in-one) -
+optional, for the vanilla map, used instead of the separate mods.
+
 ## Where to get
 
-Not published yet - build it from this repository, see [Installing](#installing) below.
+* [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3800395737)
+
+Or build it from this repository - see [Installing](#installing) below.
 
 ## Cause
 
