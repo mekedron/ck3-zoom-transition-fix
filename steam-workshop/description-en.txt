@@ -1,5 +1,8 @@
 [h1]Smooth Zoom Transitions[/h1]
 
+[h2]Support on the Paradox forum[/h2]
+I have asked Paradox to fix the blurry map with Advanced Shaders off and the ultrawide pause menu in the game itself. A [b]like or a reply[/b] in [url=https://forum.paradoxplaza.com/forum/threads/1946916/]the forum thread[/url] helps.
+
 [b]Guide:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441]CK3 on a potato PC: a locked 60 FPS, and the map still looks sharp[/url] — the settings and mods this belongs to.
 
 [b]All four in one:[/b] Sharp Terrain, Real Snow, Better Water and Smooth Zoom Transitions also come as a single mod, [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3815911404]All-in-One Map Pack Without Advanced Shaders[/url] — optional, for the vanilla map; use it instead of the separate mods, not alongside them.
@@ -31,7 +34,7 @@ Every one of those mesh instances is torn down in one frame — and rebuilt in o
 [list]
 [*]the per-frame mesh loading budget drops from 100 to 50, so streaming is amortised over several frames instead of spiking in one
 [*]fort icons, raid icons, map names and the start of the colour overlay all move off step 9
-[*]activities unload on step 7 and units on 10 instead of 9; the holding models keep vanilla's step 9, because that is the click on which the realm colours arrive and a painted map has no use for them (1.0.0 took them away on 8, a click before any colour); the roaming herds, which vanilla keeps on the army layer, get a layer of their own and go on 9 as well
+[*]activities unload on step 7 and units on 10 instead of 9; the holding models keep vanilla's step 9, because that is the click on which the realm colours arrive and a painted map has no use for them; the roaming herds, which vanilla keeps on the army layer, get a layer of their own and go on 9 as well
 [*]coast foam and mountain effects move down to steps 6 and 7
 [*]the icon work vanilla puts on steps 20 and 21 moves off the flat map transition
 [*]the map name placement search samples less densely — that search is exactly what runs when the visible title tier changes
