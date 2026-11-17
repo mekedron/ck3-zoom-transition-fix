@@ -6,7 +6,7 @@ the titles group into empires.
 
 <img src="thumbnail.png" alt="Twelve map systems on one zoom step in vanilla, spread over six with this mod" width="360">
 
-**All four in one:** Sharp Terrain, Real Snow, Better Water and Smooth Zoom Transitions
+**All five in one:** Sharp Terrain, Real Snow, Better Water, Smooth Zoom Transitions and Unit Coats of Arms
 also come as one mod, [All-in-One Map Pack Without Advanced Shaders](https://github.com/mekedron/ck3-lowspec-all-in-one) -
 optional, for the vanilla map, used instead of the separate mods.
 
@@ -63,8 +63,7 @@ per-frame loading budget is lowered so that what remains is amortised.
 
     gfx/map/map_object_data/
       game_object_layers.txt  activities 7, buildings 9 (vanilla), units 10,
-                              plus a new animal_layer on 9
-      animals.txt             vanilla's herds moved from unit_layer to animal_layer
+                              herds 4 (vanilla)
       effect_layers.txt       coast foam 6, mountain effects 7
 
 The tree layers in `layers.txt` are deliberately left alone on step 9. That is
@@ -82,8 +81,8 @@ the comments, so they are easy to re-tune by hand.
 * Activities, coast foam and mountain effects unload one or two steps
   *earlier* than vanilla, so they disappear slightly sooner than you may be
   used to. `unit_layer` is raised by one step, to 10, for the armies; the
-  roaming herds vanilla keeps on that layer move to a layer of their own and
-  go on 9 with the holdings. `building_layer` stays
+  roaming herds sit on vanilla's own `animal_layer`, which unloads on step 4
+  and is left as it is. `building_layer` stays
   on vanilla's 9: that is the click on which the realm colours arrive, and a
   painted map has no use for the holding models. 1.0.0 had them on step 8, a
   click before any colour; 10 and 11 were tried and kept them one or two
@@ -126,7 +125,7 @@ which owns that file.
     descriptor.mod                       mod metadata
     thumbnail.png                        Workshop preview, must sit in the mod root
     common/defines/graphic/zz_*.txt      partial defines overrides
-    gfx/map/map_object_data/*.txt        full overrides of two layer files and animals.txt
+    gfx/map/map_object_data/*.txt        full overrides of two layer files
     install.sh                           copies the mod into the Proton prefix
     steam-workshop/                      listing texts for Steam and Paradox Mods
     tools/make_thumbnail.py              regenerates thumbnail.png
@@ -184,6 +183,6 @@ the game still reads them, but logs one
 
 ## Game version
 
-Built against 1.20.0.2 (Crozier). After a game patch, re-diff the two layer
+Built against 1.21.0 (Florin). After a game patch, re-diff the two layer
 files against `<steam>/Crusader Kings III/game/gfx/map/map_object_data/` and
 check the vanilla values quoted in the defines comments.

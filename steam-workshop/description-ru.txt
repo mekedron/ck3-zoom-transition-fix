@@ -5,7 +5,7 @@
 
 [b]Гайд:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800254441]CK3 on a potato PC: a locked 60 FPS, and the map still looks sharp[/url].
 
-[b]Все четыре в одном:[/b] Sharp Terrain, Real Snow, Better Water и Smooth Zoom Transitions есть и одним модом — [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3815911404]All-in-One Map Pack Without Advanced Shaders[/url]. Для ванильной карты, вместо отдельных модов.
+[b]Все пять в одном:[/b] Sharp Terrain, Real Snow, Better Water, Smooth Zoom Transitions и Unit Coats of Arms есть и одним модом — [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3815911404]All-in-One Map Pack Without Advanced Shaders[/url]. Для ванильной карты, вместо отдельных модов.
 
 Убирает два рывка при изменении масштаба: тот, где земля заливается цветами графств, и тот, где карта становится плоской, а титулы группируются в империи. Из игры ничего не вырезано — работа разнесена по соседним шагам.
 
@@ -61,12 +61,12 @@ NAME_DRAW_DISTANCE подобран под 16:9; на сверхшироком �
 [list]
 [*]Только графика: файлы геймплея, скриптов и истории не меняются, так что айронмен и достижения не затрагиваются
 [*]Можно подключать и отключать в любой момент, в том числе посреди кампании, — сохранения не затрагиваются
-[*]Собран для CK3 1.20.x
+[*]Собран для CK3 1.21.x
 [/list]
 
 [h2]Совместимость[/h2]
 
-Файлы defines только добавляют ключи и конфликтуют лишь с модом, меняющим те же ключи. Два файла слоёв объектов и animals.txt заменяются целиком и конфликтуют с любым модом, который добавляет или убирает слои, — ставьте этот мод выше такого либо объедините таблицы вручную.
+Файлы defines только добавляют ключи и конфликтуют лишь с модом, меняющим те же ключи. Два файла слоёв объектов заменяются целиком и конфликтуют с любым модом, который добавляет или убирает слои, — ставьте этот мод выше такого либо объедините таблицы вручную.
 
 На [b]A Game of Thrones[/b] моду нужен патч: у AGOT свои шаги зума и своя таблица слоёв (владения там держатся до 16-го шага). Патч — таблица AGOT с той же идеей; ставить ниже AGOT:
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3801073796]AGOT Patch for Smooth Zoom Transitions[/url]
